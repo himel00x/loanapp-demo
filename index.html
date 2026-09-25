@@ -683,7 +683,7 @@
 
         function goPage(pageId) {
             if (PROTECTED_PAGES.includes(pageId) && !Auth.isLoggedIn()) {
-                alert('এই ফিচার ব্যবহার করতে অনুগ্রহ করে প্রথমে লগইন বা রেজিস্টার করুন।');
+                
                 goPage('login');
                 return;
             }
